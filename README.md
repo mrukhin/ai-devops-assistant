@@ -173,3 +173,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - run: docker compose build
+A[LocalAI API] -->|served by| B(FastAPI app)
+    B -->|uses| C[(Postgres)]
+    B -->|metrics| D(Prometheus)
+    D -->|graphs| E(Grafana)
+    F(User) -->|queries| A
+    F -->|dashboard| E   ```
